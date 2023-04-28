@@ -156,8 +156,6 @@
 
     display:none;
 }
-.header .nav{
-}
 
 .header .ul{
     display: flex;
@@ -169,9 +167,7 @@
 .header .li{
     margin: 0 1em;
 }
-.header .li .a{
 
-}
 .main{
     background: white;
     margin:0 0 1em ;
