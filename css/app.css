@@ -142,18 +142,24 @@
     -webkit-font-smoothing: antialiased;
     /* opcional */
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
   }
 .header{
     width: 100%;
     min-height: 5em;
-    background: white;
+    background: black;
     padding: 1em,2em;
+    color:white;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    display: none;
 
+}
+.header .h1{
+  margin-left: 1em;
 }
 
 .header .ul{
@@ -168,12 +174,15 @@
 }
 
 .main{
-    background: white;
+    background: black;
     margin:0 0 1em ;
     text-align: center;
     
 }
-
+.texto{
+  font-size: 125%;
+  font-family: var(--tipo-principal);
+}
 .seccion{
     width: 100%;
     min-height: 80vh;
@@ -186,16 +195,34 @@
     justify-content: center;
 }
 
+
+.seccion .ul .a{
+  animation: aparecer1 2s ease 1 backwards .5s;
+}
+.seccion .ul .a:nth-of-type(2){
+  animation-delay: .8s;
+
+}
+
 .seccion .info{
     font-size: 1.2em;
+    animation: aparecer1 2s ease 1 both;
 }
 seccion .proyectos{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-flow:column nowrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+.proyectos{
+  background: white;
+  color:black;
+  box-shadow: 0 0 3em 3em white;
 }
 .seccion .grid{
-    width: 90%;
-  
+    width: 100%;
+    
 
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
@@ -218,6 +245,7 @@ seccion .proyectos{
 
     position: relative;
     overflow: hidden;
+    border-radius: 1em;
 }
 
 .seccion .figure{
@@ -228,8 +256,8 @@ seccion .proyectos{
 .seccion .img{
     width: 100%;
     
-
 }
+
 
 .seccion .h2{
     font-family: var(--tipo-titular);
@@ -241,6 +269,7 @@ seccion .proyectos{
 .seccion .h3{
     font-family: var(--tipo-titular);
     font-size: 3em;
+    line-height: 100%;
 }
 
 .seccion .h4{
@@ -264,12 +293,12 @@ seccion .proyectos{
     font-style: italic;
 
     opacity:0;
-    transform: translateX(100%);
+    transform: translateZ(1) scale(1.2);
     transition:all .5s ease;
 }
 .seccion .article:hover .h4{
-    opacity:1;
-    transform: translateX(0%);
+    opacity:0.8;
+    transform: translateZ(1) scale(1)
 }
 .trabajos .h2{
     margin:0 0 1.5rem ;
@@ -278,9 +307,10 @@ seccion .proyectos{
 .sobreMi{
     width: 100%;
     min-height: 80vh;
-    background: lightpink;
+    background: black;
     margin:1em 0;
     padding: 2em;
+    color:white;
 
     display: flex;
     flex-flow: column wrap;
@@ -312,17 +342,36 @@ seccion .proyectos{
     align-items: center;
 }
 
-.sobreMi .li .svg{
-    margin: 0 1em;
-}
 
-.sobreMi .svg{
+.sobreMi .github{
     width: 3em;
     height: 3em;
+    
+}
+.sobreMi .github:hover{
+  transform: scale(1.1);
+}
+.sobreMi .linkedin{
+  width: 3em;
+  height: 3em;
+  margin: 0 2em;
+}
+
+.sobreMi .linkedin:hover{
+  transform: scale(1.1);
+}
+
+.sobreMi .instagram{
+  width: 3em;
+  height: 3em;
+}
+
+.sobreMi .instagram:hover{
+  transform: scale(1.1);
 }
 
 .footer{
-    background: lightblue;
+    background: rgb(234, 205, 165);
     text-align: center;
     padding: 2em 0;
 }
@@ -341,6 +390,11 @@ seccion .proyectos{
     text-transform: uppercase;
     font-weight: 600;
     transition: all .5s ease;
+    animation: aparecer1 2s ease 1 both backwards .5s;
+
+}
+.seccion .ul .a.a:nth-of-type(2){
+  animation-delay: .8s;
 }
 
 .seccion .ul .a:hover{
@@ -350,4 +404,76 @@ seccion .proyectos{
 
 .seccion .ul .li{
     margin: 0 1em;
+}
+
+.footer .span{
+  font-weight: 600;
+}
+
+@keyframes aparecer1{
+  from{
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+/*.cursor{
+  width: 5em;
+  height: 5em;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}*/
+
+.puntero{
+  /*background-color: red;*/
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.tec{
+  width: 100%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5em;
+}
+.tec .li{
+  margin: 1em;
+  width:5em;
+}
+
+span#enlace {
+  color: black;
+  font-weight: bold
+}
+
+button#copiador {
+  background-color:black;
+  color: white;
+  border: none;
+  padding: 8px;
+  font-size: 1.2em;
+  font: bold 90% monospace;
+  display: inline-block;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+}
+
+button#copiador:hover {
+color: black;
+background-color: white;
 }
