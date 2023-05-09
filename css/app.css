@@ -5,24 +5,6 @@
     --tipo-principal:'Poppins', sans-serif;
   }
   
-  /* Las adaptamos al modo oscuro */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --negro: #060606;
-    }
-  }
-  /* Opcional */
-  /* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
-  /* Opcional */
-  /* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      -webkit-animation: none !important;
-              animation: none !important;
-      -webkit-transition: none !important;
-      transition: none !important;
-    }
-  }
   /* Reseteamos los margin y paddings de todas las etiquetas */
   * {
     margin: 0;
@@ -100,7 +82,6 @@
     background-color: transparent;
     color: inherit;
     display: block;
-    /* opcional */
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
@@ -119,11 +100,6 @@
     fill: currentColor;
   }
   
-  /* (Probándolo, no usar en producción) En el caso de añadir una  */
-  /* p svg{
-    display: inline;
-    width: initial;
-  } */
   /* Configuramos la tipografía para toda la web */
   body {
     min-height: 100vh;
@@ -174,26 +150,33 @@
 }
 
 .main{
-    background: black;
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
     margin:0 0 1em ;
     text-align: center;
     
 }
+
+.seccion{
+  width: 100%;
+  min-height: 80vh;
+  background: rgb(234, 205, 165);
+  /*margin:1em 0;*/
+  padding: 2em;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
 .texto{
+  padding-top: 20px;
   font-size: 125%;
   font-family: var(--tipo-principal);
 }
-.seccion{
-    width: 100%;
-    min-height: 80vh;
-    background: rgb(234, 205, 165);
-    /*margin:1em 0;*/
-    padding: 2em;
 
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-}
 
 
 .seccion .ul .a{
@@ -201,7 +184,6 @@
 }
 .seccion .ul .a:nth-of-type(2){
   animation-delay: .8s;
-
 }
 
 .seccion .info{
@@ -255,9 +237,9 @@ seccion .proyectos{
 }
 .seccion .img{
     width: 100%;
+    border-radius: 3%;
     
 }
-
 
 .seccion .h2{
     font-family: var(--tipo-titular);
@@ -265,11 +247,31 @@ seccion .proyectos{
     font-size: 5em;
     line-height: 1em;
     color: white;
+    padding-bottom: 10px;
+    padding-top: 5%;
 }
-.seccion .h3{
+.h3{
     font-family: var(--tipo-titular);
     font-size: 3em;
-    line-height: 100%;
+    line-height: 80%;
+    color:black;
+    padding-bottom: 25px;
+}
+
+.h3 span{
+  position: absolute;
+  right: 0;
+  width:0%;
+  height: 11%;
+  background: rgb(234, 205, 165);
+  border-left: 1px solid black;
+  animation: escribir 6s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+  from {width:72%;}
+  to{width:24%;}
+  
 }
 
 .seccion .h4{
@@ -307,7 +309,7 @@ seccion .proyectos{
 .sobreMi{
     width: 100%;
     min-height: 80vh;
-    background: black;
+    
     margin:1em 0;
     padding: 2em;
     color:white;
@@ -377,6 +379,7 @@ seccion .proyectos{
 }
 
 .seccion .ul{
+    padding-top: 50px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -420,28 +423,24 @@ seccion .proyectos{
     transform: translateY(0%);
   }
 }
-/*.cursor{
-  width: 5em;
-  height: 5em;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  pointer-events: none;
-  border-radius: 50%;
-  mix-blend-mode: difference;
-}*/
 
+.conte-padre{
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
 .puntero{
   /*background-color: red;*/
   width: 100px;
   height: 100px;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 9999;
 }
 .tec{
+  padding-top: 60px;
   width: 100%;  
   display: flex;
   justify-content: center;
@@ -449,8 +448,8 @@ seccion .proyectos{
   margin-bottom: 5em;
 }
 .tec .li{
-  margin: 1em;
-  width:5em;
+  margin: 0.8em;
+  width:3em;
 }
 
 span#enlace {
@@ -476,4 +475,50 @@ button#copiador {
 button#copiador:hover {
 color: black;
 background-color: white;
+}
+.es{
+  color: #333
+}
+.en{
+  color:#00a1ff
+}
+.check{
+  position: relative;
+  width: 50px;
+}
+
+.check:before{
+  content:'';
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  background: #333;
+  border-radius: 25px;
+}
+
+.check:after{
+  content:'';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 25px;
+  transition: 0.25s;
+  border:2px solid #333;
+  box-sizing: border-box;
+}
+.check:checked:after{
+  left:25px;
+  border:2px solid #00a1ff;
+}
+.check:checked:before{
+  background:#00a1ff;
+}
+
+.email{
+  font-size: 120%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a:hover {
+  cursor: pointer;
 }
