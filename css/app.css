@@ -524,8 +524,9 @@ a:hover {
 
 @media screen and (max-width: 980px) {
   .tec .li{
-    margin: 0.2em;
-    width: 1.5em;
+    /*margin: 0.2em;
+    width: 1.5em;*/
+    display: none;
   }
   .h3 span{
     display: none;
