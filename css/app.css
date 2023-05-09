@@ -522,9 +522,12 @@ a:hover {
   cursor: pointer;
 }
 
-@media screen and(max-width:800px) {
-  .section info{
-    flex-direction: column;
+@media screen and (max-width: 980px) {
+  .tec .li{
+    margin: 0.2em;
+    width:2em;
   }
-  
-}
+  .h3 span{
+    display: none;
+  }
+  }
