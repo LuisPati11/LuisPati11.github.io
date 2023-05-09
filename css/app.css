@@ -523,6 +523,7 @@ a:hover {
 }
 
 @media screen and (max-width: 980px) {
+  
   .tec .li{
     /*margin: 0.2em;
     width: 1.5em;*/
@@ -530,5 +531,17 @@ a:hover {
   }
   .h3 span{
     display: none;
+  }
+  .seccion .h2{
+    font-size: 3.5rem;
+  }
+  .seccion .h3{
+    font-size: 2rem;
+  }
+  .sobreMi .h2{
+    font-size: 3rem;
+  }
+  .sobreMi .p{
+    font-size: 1rem;
   }
   }
