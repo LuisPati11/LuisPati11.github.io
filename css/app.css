@@ -544,4 +544,11 @@ a:hover {
   .sobreMi .p{
     font-size: 1rem;
   }
+  .seccion .grid{
+    display:flow-root;
+  }
+  .seccion .article{
+    margin-top: 5%;
+
+  }
   }
