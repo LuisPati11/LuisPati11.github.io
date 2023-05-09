@@ -204,8 +204,7 @@ seccion .proyectos{
 }
 .seccion .grid{
     width: 100%;
-    
-
+  
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
     gap: 1em;
@@ -521,4 +520,11 @@ background-color: white;
 }
 a:hover {
   cursor: pointer;
+}
+
+@media screen and(max-width:800px) {
+  .section info{
+    flex-direction: column;
+  }
+  
 }
