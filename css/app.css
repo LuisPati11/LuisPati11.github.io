@@ -385,23 +385,40 @@ seccion .proyectos{
     align-items: center;
 }
 
-.seccion .ul .a{
-    border: 1px solid rgba(0, 0, 0, .4);
-    border-radius: 50%;
-    padding:1em 1em 1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: all .5s ease;
-    animation: aparecer1 2s ease 1 both backwards .5s;
 
-}
-.seccion .ul .a.a:nth-of-type(2){
-  animation-delay: .8s;
+.ul .li .a {
+  background-color: rgb(234, 205, 165);
+  border: 2px solid black;
+  border-radius: 30px;
+  box-shadow:black 4px 4px 0 0;
+  color:black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.seccion .ul .a:hover{
-    border-color: black;
-    border-width: 0.15em;
+.ul .li .a:hover {
+  background-color:white;
+}
+
+.ul .li .a :active {
+  box-shadow: black 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .b.ul .li .a  {
+    min-width: 120px;
+    padding: 0 25px;
+  }
 }
 
 .seccion .ul .li{
